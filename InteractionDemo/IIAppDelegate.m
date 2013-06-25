@@ -22,7 +22,7 @@
     
     self.viewOne = [[IIViewController alloc] init];
     self.viewOne.view.backgroundColor = [UIColor redColor];
-    
+    self.viewOne.title = @"Swipe Up";
     self.viewTwo = [[IIViewController alloc] init];
     self.viewTwo.view.backgroundColor = [UIColor yellowColor];
     
