@@ -8,9 +8,11 @@
 
 #import "IIAppDelegate.h"
 #import "IIViewController.h"
+#import "IIViewController2.h"
 #import "IIInteractiveTransition.h"
+#import "IIZoomAnimationController.h"
 
-@interface IIAppDelegate () <UIViewControllerTransitioningDelegate,UIViewControllerAnimatedTransitioning>
+@interface IIAppDelegate () <UIViewControllerTransitioningDelegate>
 @end
 
 @implementation IIAppDelegate
@@ -23,7 +25,7 @@
     self.viewOne = [[IIViewController alloc] init];
     self.viewOne.view.backgroundColor = [UIColor redColor];
     self.viewOne.title = @"Swipe Up";
-    self.viewTwo = [[IIViewController alloc] init];
+    self.viewTwo = [[IIViewController2 alloc] init];
     self.viewTwo.view.backgroundColor = [UIColor yellowColor];
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.viewOne];
@@ -71,56 +73,25 @@
 #pragma mark - UIViewControllerTransitioningDelegate
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UINavigationController *)presenting sourceController:(UIViewController *)source {
     if ([presented isKindOfClass:IIViewController.class]) {
-        return self;
+        return [[IIZoomAnimationController alloc] init];
     }
     return nil;
 }
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
     if ([dismissed isKindOfClass:IIViewController.class]) {
-        return self;
+        return [[IIZoomAnimationController alloc] init];
     }
     return nil;
 }
 
 - (id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator {
     return self.transition;
-    //return nil;
 }
 
 - (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator {
     return nil;
 }
 
-- (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
-    return 0.3f;
-}
 
-// This method can only  be a nop if the transition is interactive and not a percentDriven interactive transition.
-- (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    
-    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
-    UIView *containerView = [transitionContext containerView];
-    
-    NSTimeInterval duration = [self transitionDuration:transitionContext];
-    
-    
-    [containerView addSubview:fromViewController.view];
-    
-    [containerView addSubview:toViewController.view];
-    
-    [fromViewController.view setFrame:[transitionContext finalFrameForViewController:fromViewController]];
-    [toViewController.view setFrame:CGRectInset(containerView.bounds, 160, 160)];
-    
-    [UIView animateWithDuration:duration animations:^{
-        [toViewController.view setFrame:containerView.bounds];
-        fromViewController.view.alpha = 0.5f;
-    } completion:^(BOOL finished) {
-        [transitionContext completeTransition:YES];
-        
-    }];
-    
-}
 @end

@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class IIViewController,IIInteractiveTransition;
+@class IIViewController,IIViewController2,IIInteractiveTransition;
 
 @interface IIAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong) IIViewController *viewOne;
-@property (strong) IIViewController *viewTwo;
+@property (strong) IIViewController2 *viewTwo;
 @property (strong) IIInteractiveTransition *transition;
 @end

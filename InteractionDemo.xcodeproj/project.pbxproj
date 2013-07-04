@@ -21,6 +21,8 @@
 		65C3A9C51779EF9B00C8E839 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65C3A9C31779EF9B00C8E839 /* InfoPlist.strings */; };
 		65C3A9C71779EF9B00C8E839 /* InteractionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C3A9C61779EF9B00C8E839 /* InteractionDemoTests.m */; };
 		65C3A9D21779F12A00C8E839 /* IIInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C3A9D11779F12A00C8E839 /* IIInteractiveTransition.m */; };
+		65E1627B1785BBCD000D050D /* IIZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1627A1785BBCD000D050D /* IIZoomAnimationController.m */; };
+		65E1627E1785BCF3000D050D /* IIViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1627D1785BCF3000D050D /* IIViewController2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		65C3A9C61779EF9B00C8E839 /* InteractionDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InteractionDemoTests.m; sourceTree = "<group>"; };
 		65C3A9D01779F12A00C8E839 /* IIInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIInteractiveTransition.h; sourceTree = "<group>"; };
 		65C3A9D11779F12A00C8E839 /* IIInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIInteractiveTransition.m; sourceTree = "<group>"; };
+		65E162791785BBCD000D050D /* IIZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIZoomAnimationController.h; sourceTree = "<group>"; };
+		65E1627A1785BBCD000D050D /* IIZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIZoomAnimationController.m; sourceTree = "<group>"; };
+		65E1627C1785BCF3000D050D /* IIViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewController2.h; sourceTree = "<group>"; };
+		65E1627D1785BCF3000D050D /* IIViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewController2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,8 @@
 		65C3A9A11779EF9A00C8E839 /* InteractionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				65E1627C1785BCF3000D050D /* IIViewController2.h */,
+				65E1627D1785BCF3000D050D /* IIViewController2.m */,
 				65C3A9AA1779EF9A00C8E839 /* IIAppDelegate.h */,
 				65C3A9AB1779EF9A00C8E839 /* IIAppDelegate.m */,
 				65C3A9B01779EF9A00C8E839 /* IIViewController.h */,
@@ -120,6 +128,8 @@
 				65C3A9B31779EF9A00C8E839 /* Images.xcassets */,
 				65C3A9D01779F12A00C8E839 /* IIInteractiveTransition.h */,
 				65C3A9D11779F12A00C8E839 /* IIInteractiveTransition.m */,
+				65E162791785BBCD000D050D /* IIZoomAnimationController.h */,
+				65E1627A1785BBCD000D050D /* IIZoomAnimationController.m */,
 				65C3A9A21779EF9A00C8E839 /* Supporting Files */,
 			);
 			path = InteractionDemo;
@@ -252,9 +262,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				65C3A9AC1779EF9A00C8E839 /* IIAppDelegate.m in Sources */,
+				65E1627B1785BBCD000D050D /* IIZoomAnimationController.m in Sources */,
 				65C3A9A81779EF9A00C8E839 /* main.m in Sources */,
 				65C3A9B21779EF9A00C8E839 /* IIViewController.m in Sources */,
 				65C3A9D21779F12A00C8E839 /* IIInteractiveTransition.m in Sources */,
+				65E1627E1785BCF3000D050D /* IIViewController2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +461,7 @@
 				65C3A9CC1779EF9B00C8E839 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65C3A9CD1779EF9B00C8E839 /* Build configuration list for PBXNativeTarget "InteractionDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +470,7 @@
 				65C3A9CF1779EF9B00C8E839 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
