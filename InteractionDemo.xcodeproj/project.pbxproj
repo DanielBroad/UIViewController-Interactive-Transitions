@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65C153CC1792AD2F006835E0 /* IISwipeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C153C71792AD2F006835E0 /* IISwipeAnimationController.m */; };
+		65C153CD1792AD2F006835E0 /* IISwipeAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C153C71792AD2F006835E0 /* IISwipeAnimationController.m */; };
+		65C153CE1792AD2F006835E0 /* IISwipeInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C153C91792AD2F006835E0 /* IISwipeInteractiveTransition.m */; };
+		65C153CF1792AD2F006835E0 /* IISwipeInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C153C91792AD2F006835E0 /* IISwipeInteractiveTransition.m */; };
+		65C153D01792AD2F006835E0 /* IIZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C153CB1792AD2F006835E0 /* IIZoomAnimationController.m */; };
+		65C153D11792AD2F006835E0 /* IIZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C153CB1792AD2F006835E0 /* IIZoomAnimationController.m */; };
 		65C3A99C1779EF9A00C8E839 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C3A99B1779EF9A00C8E839 /* Foundation.framework */; };
 		65C3A99E1779EF9A00C8E839 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C3A99D1779EF9A00C8E839 /* CoreGraphics.framework */; };
 		65C3A9A01779EF9A00C8E839 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C3A99F1779EF9A00C8E839 /* UIKit.framework */; };
@@ -20,8 +26,6 @@
 		65C3A9BD1779EF9A00C8E839 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65C3A99F1779EF9A00C8E839 /* UIKit.framework */; };
 		65C3A9C51779EF9B00C8E839 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65C3A9C31779EF9B00C8E839 /* InfoPlist.strings */; };
 		65C3A9C71779EF9B00C8E839 /* InteractionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C3A9C61779EF9B00C8E839 /* InteractionDemoTests.m */; };
-		65C3A9D21779F12A00C8E839 /* IIInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C3A9D11779F12A00C8E839 /* IIInteractiveTransition.m */; };
-		65E1627B1785BBCD000D050D /* IIZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1627A1785BBCD000D050D /* IIZoomAnimationController.m */; };
 		65E1627E1785BCF3000D050D /* IIViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1627D1785BCF3000D050D /* IIViewController2.m */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		65C153C61792AD2F006835E0 /* IISwipeAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISwipeAnimationController.h; sourceTree = "<group>"; };
+		65C153C71792AD2F006835E0 /* IISwipeAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISwipeAnimationController.m; sourceTree = "<group>"; };
+		65C153C81792AD2F006835E0 /* IISwipeInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISwipeInteractiveTransition.h; sourceTree = "<group>"; };
+		65C153C91792AD2F006835E0 /* IISwipeInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISwipeInteractiveTransition.m; sourceTree = "<group>"; };
+		65C153CA1792AD2F006835E0 /* IIZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIZoomAnimationController.h; sourceTree = "<group>"; };
+		65C153CB1792AD2F006835E0 /* IIZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIZoomAnimationController.m; sourceTree = "<group>"; };
 		65C3A9981779EF9A00C8E839 /* InteractionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C3A99B1779EF9A00C8E839 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		65C3A99D1779EF9A00C8E839 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,10 +64,6 @@
 		65C3A9C21779EF9B00C8E839 /* InteractionDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InteractionDemoTests-Info.plist"; sourceTree = "<group>"; };
 		65C3A9C41779EF9B00C8E839 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		65C3A9C61779EF9B00C8E839 /* InteractionDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InteractionDemoTests.m; sourceTree = "<group>"; };
-		65C3A9D01779F12A00C8E839 /* IIInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIInteractiveTransition.h; sourceTree = "<group>"; };
-		65C3A9D11779F12A00C8E839 /* IIInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIInteractiveTransition.m; sourceTree = "<group>"; };
-		65E162791785BBCD000D050D /* IIZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIZoomAnimationController.h; sourceTree = "<group>"; };
-		65E1627A1785BBCD000D050D /* IIZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIZoomAnimationController.m; sourceTree = "<group>"; };
 		65E1627C1785BCF3000D050D /* IIViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewController2.h; sourceTree = "<group>"; };
 		65E1627D1785BCF3000D050D /* IIViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewController2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +92,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65C153C51792AD2F006835E0 /* UIViewControllerInteractions */ = {
+			isa = PBXGroup;
+			children = (
+				65C153C61792AD2F006835E0 /* IISwipeAnimationController.h */,
+				65C153C71792AD2F006835E0 /* IISwipeAnimationController.m */,
+				65C153C81792AD2F006835E0 /* IISwipeInteractiveTransition.h */,
+				65C153C91792AD2F006835E0 /* IISwipeInteractiveTransition.m */,
+				65C153CA1792AD2F006835E0 /* IIZoomAnimationController.h */,
+				65C153CB1792AD2F006835E0 /* IIZoomAnimationController.m */,
+			);
+			path = UIViewControllerInteractions;
+			sourceTree = "<group>";
+		};
 		65C3A98F1779EF9A00C8E839 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +138,7 @@
 		65C3A9A11779EF9A00C8E839 /* InteractionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				65C153C51792AD2F006835E0 /* UIViewControllerInteractions */,
 				65E1627C1785BCF3000D050D /* IIViewController2.h */,
 				65E1627D1785BCF3000D050D /* IIViewController2.m */,
 				65C3A9AA1779EF9A00C8E839 /* IIAppDelegate.h */,
@@ -126,10 +146,6 @@
 				65C3A9B01779EF9A00C8E839 /* IIViewController.h */,
 				65C3A9B11779EF9A00C8E839 /* IIViewController.m */,
 				65C3A9B31779EF9A00C8E839 /* Images.xcassets */,
-				65C3A9D01779F12A00C8E839 /* IIInteractiveTransition.h */,
-				65C3A9D11779F12A00C8E839 /* IIInteractiveTransition.m */,
-				65E162791785BBCD000D050D /* IIZoomAnimationController.h */,
-				65E1627A1785BBCD000D050D /* IIZoomAnimationController.m */,
 				65C3A9A21779EF9A00C8E839 /* Supporting Files */,
 			);
 			path = InteractionDemo;
@@ -261,11 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C153D01792AD2F006835E0 /* IIZoomAnimationController.m in Sources */,
 				65C3A9AC1779EF9A00C8E839 /* IIAppDelegate.m in Sources */,
-				65E1627B1785BBCD000D050D /* IIZoomAnimationController.m in Sources */,
 				65C3A9A81779EF9A00C8E839 /* main.m in Sources */,
+				65C153CE1792AD2F006835E0 /* IISwipeInteractiveTransition.m in Sources */,
+				65C153CC1792AD2F006835E0 /* IISwipeAnimationController.m in Sources */,
 				65C3A9B21779EF9A00C8E839 /* IIViewController.m in Sources */,
-				65C3A9D21779F12A00C8E839 /* IIInteractiveTransition.m in Sources */,
 				65E1627E1785BCF3000D050D /* IIViewController2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +292,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				65C3A9C71779EF9B00C8E839 /* InteractionDemoTests.m in Sources */,
+				65C153D11792AD2F006835E0 /* IIZoomAnimationController.m in Sources */,
+				65C153CD1792AD2F006835E0 /* IISwipeAnimationController.m in Sources */,
+				65C153CF1792AD2F006835E0 /* IISwipeInteractiveTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,13 +9,17 @@
 #import "IIAppDelegate.h"
 #import "IIViewController.h"
 #import "IIViewController2.h"
-#import "IIInteractiveTransition.h"
+#import "IISwipeInteractiveTransition.h"
 #import "IIZoomAnimationController.h"
 
-@interface IIAppDelegate () <UIViewControllerTransitioningDelegate>
+@interface IIAppDelegate ()
 @end
 
 @implementation IIAppDelegate
+
++(IIAppDelegate*) sharedInstance {
+    return (IIAppDelegate*) [UIApplication sharedApplication].delegate;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -28,16 +32,15 @@
     self.viewTwo = [[IIViewController2 alloc] init];
     self.viewTwo.view.backgroundColor = [UIColor yellowColor];
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.viewOne];
-    self.window.rootViewController = nav;
+    UITabBarController *tab = [[UITabBarController alloc] init];
+    tab.viewControllers = @[self.viewOne];
+    
+    self.window.rootViewController = tab;
     
     [self.window makeKeyAndVisible];
     
-    self.transition = [[IIInteractiveTransition alloc] initWithNavigationController:nav];
-    
+    self.transition = [[IISwipeInteractiveTransition alloc] initWithTabBarController:tab];
     self.transition.toPresent = self.viewTwo;
-    self.transition.toPresent.modalPresentationStyle = UIModalPresentationCustom;
-    [self.transition.toPresent setTransitioningDelegate: self];
     
     return YES;
 }
@@ -70,28 +73,6 @@
 }
 
 
-#pragma mark - UIViewControllerTransitioningDelegate
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UINavigationController *)presenting sourceController:(UIViewController *)source {
-    if ([presented isKindOfClass:IIViewController.class]) {
-        return [[IIZoomAnimationController alloc] init];
-    }
-    return nil;
-}
-
-- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    if ([dismissed isKindOfClass:IIViewController.class]) {
-        return [[IIZoomAnimationController alloc] init];
-    }
-    return nil;
-}
-
-- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator {
-    return self.transition;
-}
-
-- (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator {
-    return nil;
-}
 
 
 @end

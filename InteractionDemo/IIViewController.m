@@ -7,8 +7,12 @@
 //
 
 #import "IIViewController.h"
+#import "IIViewController2.h"
 
-@interface IIViewController ()
+#import "IIAppDelegate.h"
+#import "IIZoomAnimationController.h"
+
+@interface IIViewController () <UIViewControllerTransitioningDelegate>
 
 @end
 
@@ -18,6 +22,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(show2:)];
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,4 +32,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) show2: (id) sender {
+    UIViewController *toShow = [IIAppDelegate sharedInstance].viewTwo;
+    toShow.modalPresentationStyle = UIModalPresentationCustom;
+    [toShow setTransitioningDelegate: self];
+    [self presentViewController:[IIAppDelegate sharedInstance].viewTwo animated:YES completion:^{
+        
+    }];
+}
+
+#pragma mark - UIViewControllerTransitioningDelegate
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UINavigationController *)presenting sourceController:(UIViewController *)source {
+    return [[IIZoomAnimationController alloc] initToVC:presented];
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    return [[IIZoomAnimationController alloc] initToVC:dismissed];
+}
 @end

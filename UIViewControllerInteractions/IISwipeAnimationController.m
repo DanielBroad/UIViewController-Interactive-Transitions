@@ -1,15 +1,26 @@
 //
-//  IIZoomAnimationController.m
+//  IISwipeAnimatonController.m
 //  InteractionDemo
 //
-//  Created by Daniel Broad on 04/07/2013.
+//  Created by Daniel Broad on 11/07/2013.
 //  Copyright (c) 2013 Dorada Software Ltd. All rights reserved.
 //
 
-#import "IIZoomAnimationController.h"
-#import "IIViewController2.h"
+#import "IISwipeAnimationController.h"
 
-@implementation IIZoomAnimationController
+@interface IISwipeAnimationController ()
+@property (weak) UIViewController* to;
+@end
+
+@implementation IISwipeAnimationController
+
+-(id) initToVC: (UIViewController*) to {
+    self = [super init];
+    if (self) {
+        self.to = to;
+    }
+    return self;
+}
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
     return 0.3f;
@@ -24,35 +35,39 @@
     
     NSTimeInterval duration = [self transitionDuration:transitionContext];
     
-
-    
-    if ([fromViewController isKindOfClass:IIViewController2.class]) { // dismiss
+    if (toViewController != self.to) { // dismiss
+        NSLog(@"Animation Dismiss");
         [containerView addSubview:toViewController.view];
         [containerView addSubview:fromViewController.view];
         [fromViewController.view setFrame:containerView.bounds];
         [toViewController.view setFrame:[transitionContext finalFrameForViewController:toViewController]];
         
         [UIView animateWithDuration:duration animations:^{
-            [fromViewController.view setFrame:CGRectInset(containerView.bounds, 160, 240)];
+            [fromViewController.view setFrame:CGRectOffset(containerView.bounds, 0, containerView.bounds.size.height)];
             toViewController.view.alpha = 1.0f;
         } completion:^(BOOL finished) {
-            [transitionContext completeTransition:YES];
+            [transitionContext completeTransition:!self.wasCancelled];
+            NSLog(@"Animation Dismiss Finished");
         }];
     } else {  // present
+        NSLog(@"Animation Present");
         [containerView addSubview:fromViewController.view];
         [containerView addSubview:toViewController.view];
         [fromViewController.view setFrame:[transitionContext finalFrameForViewController:fromViewController]];
-        [toViewController.view setFrame:CGRectInset(containerView.bounds, 160, 240)];
+        CGRect bounds = containerView.bounds;
+        [toViewController.view setFrame:CGRectOffset(bounds, 0, bounds.size.height-self.yOffset)];
         
-        [UIView animateWithDuration:duration animations:^{
+        [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
             [toViewController.view setFrame:containerView.bounds];
             fromViewController.view.alpha = 0.5f;
         } completion:^(BOOL finished) {
-            [transitionContext completeTransition:YES];
+            [transitionContext completeTransition:!self.wasCancelled];
+            NSLog(@"Animation Present Finished %d",!self.wasCancelled);
             
         }];
     }
-
+    
     
 }
+
 @end

@@ -10,4 +10,6 @@
 
 @interface IIZoomAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 
+-(id) initToVC: (UIViewController*) to;
+
 @end
