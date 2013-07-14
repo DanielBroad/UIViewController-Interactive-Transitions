@@ -40,7 +40,7 @@
     [self.window makeKeyAndVisible];
     
     self.transition = [[IISwipeInteractiveTransition alloc] initWithTabBarController:tab];
-    self.transition.toPresent = self.viewTwo;
+    self.transition.toPresent = [[UINavigationController alloc] initWithRootViewController:self.viewTwo];
     
     return YES;
 }

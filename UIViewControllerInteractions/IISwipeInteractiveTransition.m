@@ -49,6 +49,7 @@
             self.toPresent.modalPresentationStyle = UIModalPresentationCustom;
             [self.toPresent setTransitioningDelegate: self];
             [self.parent presentViewController:self.toPresent animated:YES completion:nil];
+            self.myAnimationController.orientation = [self.parent interfaceOrientation];
             self.myAnimationController.wasCancelled = NO;
             self.myAnimationController.yOffset = 64-_firstPoint.y;
             if ([self.delegate respondsToSelector:@selector(swipeInteractiveTransitionDidBeginPresentation:)]) {
@@ -62,12 +63,14 @@
         case UIGestureRecognizerStateCancelled:
             if(percent < 0.25 || [gr state] == UIGestureRecognizerStateCancelled) {
                 NSLog(@"Interaction cancelled");
+                self.completionSpeed = 0.5f;
                 self.myAnimationController.wasCancelled = YES;
                 [self cancelInteractiveTransition];
                 if ([self.delegate respondsToSelector:@selector(swipeInteractiveTransitionDidCancelPresentation:)]) {
                     [self.delegate swipeInteractiveTransitionDidCancelPresentation:self];
                 }
             } else {
+                self.completionSpeed = 1.0f;
                 self.myAnimationController.wasCancelled = NO;
                 NSLog(@"Interaction completed");
                 [self finishInteractiveTransition];
@@ -81,21 +84,24 @@
     }
 }
 
-
-
 #pragma mark - UIViewControllerTransitioningDelegate
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UINavigationController *)presenting sourceController:(UIViewController *)source {
     self.myAnimationController = [[IISwipeAnimationController alloc] initToVC:presented];
+    self.myAnimationController.orientation = [self.parent interfaceOrientation];
     return self.myAnimationController;
 }
 
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
     self.myAnimationController = [[IISwipeAnimationController alloc] initToVC:dismissed];
+    self.myAnimationController.orientation = [self.parent interfaceOrientation];
     return self.myAnimationController;
 }
 
 - (id <UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id <UIViewControllerAnimatedTransitioning>)animator {
-    return self;
+    if (self.interactive) {
+        return self;
+    }
+    return nil;
 }
 
 - (id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator {

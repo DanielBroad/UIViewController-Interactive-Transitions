@@ -7,7 +7,6 @@
 //
 
 #import "IIZoomAnimationController.h"
-#import "IIViewController2.h"
 
 @interface IIZoomAnimationController ()
 @property (weak) UIViewController* to;

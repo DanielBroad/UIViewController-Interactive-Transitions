@@ -16,5 +16,6 @@
 
 @property (assign) BOOL wasCancelled;
 @property (assign) CGFloat yOffset;
+@property (assign) UIInterfaceOrientation orientation;
 
 @end
